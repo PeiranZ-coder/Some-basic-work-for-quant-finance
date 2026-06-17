@@ -1,7 +1,7 @@
 # Linear Algebra for Quantitative Finance
 
 Linear algebra plays a central role in many modern fields, including 
-artificial intelligence, machine learning, and deep learning.
+artificial intelligence, machine learning, and deep learning, etc.
 About 40 years ago, students were required to study abstract algebra 
 before approaching linear algebra — the subject was treated as a 
 formal, proof-heavy discipline. Today, it is taught much more 
