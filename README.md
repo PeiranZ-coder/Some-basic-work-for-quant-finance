@@ -6,9 +6,9 @@ theory for quantitative finance. Notes are written in a mix of English and Chine
 
 # 1. Mathematics
 - Linear Algebra (矩阵运算、特征值分解、PCA)
-- Calculus & Optimization (梯度下降、拉格朗日乘数)
+- Calculus & Optimization (梯度下降, 拉格朗日乘数)
 - Stochastic Calculus (布朗运动、Itô's Lemma)
-- 
+- ...
 # 2. Probability & Statistics 概率与统计
 - Probability Distributions 概率分布
 - MLE / MAP Estimation 最大似然估计 / 最大后验估计
