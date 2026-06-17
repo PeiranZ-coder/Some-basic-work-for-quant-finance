@@ -241,10 +241,8 @@ $$
 > 📌 **金融含义 Financial Meaning：** Arrow-Debreu 证券对应单位矩阵的列，每种证券只在一种状态下支付。  
 > Arrow-Debreu securities correspond to the columns of the identity matrix, where each security pays off in only one state.
 
----
 
 ## Summary
-## 总结
 
 | 概念 Concept | 核心公式 Core Formula | 金融应用 Financial Application |
 |:---|:---|:---|
@@ -257,21 +255,4 @@ $$
 | 可逆矩阵 Invertible Matrix | $AA^{-1}=I$ | 完全市场复制 Complete market replication |
 | Arrow-Debreu | 单位矩阵的列 Columns of identity matrix | 状态价格定价 State-price pricing |
 
----
 
-## ✅ 正确性检查 / Correctness Verification
-
-所有数学公式、定义和定理均正确无误。  
-All mathematical formulas, definitions, and theorems are correct.
-
-| 检查项 Check Item | 状态 Status |
-|:---|:---|
-| 线性无关定义 / Linear independence definition | ✅ 正确 Correct |
-| 秩-零化度定理 / Rank-nullity theorem | ✅ 正确 Correct |
-| 可逆矩阵等价条件 / Invertible matrix conditions | ✅ 正确 Correct |
-| 转置性质 / Transpose properties | ✅ 正确 Correct |
-| 协方差与相关矩阵关系 / Covariance-correlation relation | ✅ 正确 Correct |
-| 矩阵乘法结合律（非交换律）/ Associativity (non-commutativity) | ✅ 正确 Correct |
-
-> ⚠️ **唯一提醒 Single Reminder：** 1.6 节中协方差公式使用总体协方差（除以 $T$）。在实际金融数据分析中，通常使用样本协方差（除以 $T-1$）以获得无偏估计。可根据上下文选择适当的公式。  
-> In Section 1.6, the covariance formula uses population covariance (dividing by $T$). In practice, sample covariance (dividing by $T-1$) is typically used for an unbiased estimate. Choose the appropriate formula based on context.
