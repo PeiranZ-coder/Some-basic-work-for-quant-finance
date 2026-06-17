@@ -389,17 +389,8 @@ $$
 
 ---
 
-### 总结 Summary
-
-| Step 步骤 | Operation 操作 | Formula 公式 |
-|---|---|---|
-| 1 | Daily return 日收益率 | $r_t = \frac{S(t_2)-S(t_1)}{S(t_1)}$ |
-| 2 | Sample mean 样本均值 | $\hat{\mu}_{X_k} = \frac{1}{N}\sum_{i=1}^N X_k(t_i)$ |
-| 3 | Demean 去均值 | $\bar{T}_X(i,k) = X_k(t_i) - \hat{\mu}_{X_k}$ |
-| 4 | Matrix multiply 矩阵乘法 | $\bar{T}_X^T \bar{T}_X$ |
-| 5 | Normalize 归一化 | $\hat{\Sigma}_X = \frac{1}{N-1}\bar{T}_X^T\bar{T}_X$ |
-
-> 📌 Financial Insight 金融含义：The covariance matrix captures the
+Summary
+> Financial Insight 金融含义：The covariance matrix captures the
 > co-movement between securities and is the key input for
 > Markowitz portfolio optimization and risk management.
 > 协方差矩阵描述证券之间的联动关系，是 Markowitz
