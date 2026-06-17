@@ -206,22 +206,7 @@ $$
 \end{pmatrix}
 $$
 
-$$
-(\hat{D}_{\sigma X})^{-1} =
-\begin{pmatrix}
-\frac{1}{0.2} & 0 & 0 & 0 \\
-0 & \frac{1}{0.3} & 0 & 0 \\
-0 & 0 & \frac{1}{0.1} & 0 \\
-0 & 0 & 0 & \frac{1}{0.25}
-\end{pmatrix}
-=
-\begin{pmatrix}
-5 & 0 & 0 & 0 \\
-0 & \frac{10}{3} & 0 & 0 \\
-0 & 0 & 10 & 0 \\
-0 & 0 & 0 & 4
-\end{pmatrix}
-$$
+
 
 **Step 3：计算相关矩阵**
 
