@@ -1,8 +1,4 @@
-## 1.1.1 Covariance Matrix Computation from Time Series Data
-协方差矩阵的时间序列计算
-
----
-
+##Covariance Matrix Computation from Time Series Data协方差矩阵的时间序列计算
 ## Part 1：核心概念与公式 Core Concepts & Formulas
 
 ### 1. 样本均值 Sample Mean
