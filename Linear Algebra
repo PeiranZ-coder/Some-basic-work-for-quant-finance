@@ -30,10 +30,3 @@ these tools are applied in quantitative finance.
 
 
 
-# 在项目文件夹里
-mkdir "Linear Algebra"
-cd "Linear Algebra"
-# 把你的文件放进去
-git add .
-git commit -m "add Linear Algebra folder"
-git push
