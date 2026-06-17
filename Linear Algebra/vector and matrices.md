@@ -244,7 +244,7 @@ $$
 
 ## Summary
 
-| 概念 Concept | 核心公式 Core Formula | 金融应用 Financial Application |
+|  Concept |  Formula | Financial Application |
 |:---|:---|:---|
 | 列向量 Column Vector | $v \in \mathbb{R}^n$ | 证券收益序列 Security return series |
 | 矩阵 Matrix | $A \in \mathbb{R}^{m \times n}$ | 多资产收益矩阵 Multi-asset return matrix |
