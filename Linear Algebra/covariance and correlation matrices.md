@@ -208,15 +208,15 @@ $$
 $$
 (\hat{D}_{\sigma X})^{-1} =
 \begin{pmatrix}
-5 & 0 & 0 & 0 \\
+\frac{1}{0.2} & 0 & 0 & 0 \\
 0 & \frac{1}{0.3} & 0 & 0 \\
-0 & 0 & 10 & 0 \\
-0 & 0 & 0 & 4
+0 & 0 & \frac{1}{0.1} & 0 \\
+0 & 0 & 0 & \frac{1}{0.25}
 \end{pmatrix}
 =
 \begin{pmatrix}
 5 & 0 & 0 & 0 \\
-0 & 3.33 & 0 & 0 \\
+0 & \frac{10}{3} & 0 & 0 \\
 0 & 0 & 10 & 0 \\
 0 & 0 & 0 & 4
 \end{pmatrix}
@@ -225,15 +225,13 @@ $$
 **Step 3：计算相关矩阵**
 
 $$
-\hat{\Omega}_X = (\hat{D}_{\sigma X})^{-1}
-\hat{\Sigma}_X (\hat{D}_{\sigma X})^{-1}
+\hat{\Omega}_X = (\hat{D}_{\sigma X})^{-1} \hat{\Sigma}_X (\hat{D}_{\sigma X})^{-1}
 $$
 
 每个元素的计算公式：
 
 $$
-\hat{\Omega}_X(j,k) =
-\frac{\hat{\Sigma}_X(j,k)}{\hat{\sigma}_j \cdot \hat{\sigma}_k}
+\hat{\Omega}_X(j,k) = \frac{\hat{\Sigma}_X(j,k)}{\hat{\sigma}_j \cdot \hat{\sigma}_k}
 $$
 
 逐个计算：
