@@ -184,6 +184,8 @@ $$
 \quad \square
 $$
 
+---
+
 ### 例题 3：综合练习 Practice Problem
 
 **原题：**
