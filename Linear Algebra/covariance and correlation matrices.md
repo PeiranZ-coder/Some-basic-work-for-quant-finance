@@ -1,11 +1,10 @@
-# 1.4.1 Converting Between Covariance and Correlation Matrices
-# 1.4.1 协方差矩阵与相关矩阵的转换
+# Converting Between Covariance and Correlation Matrices
+# 协方差矩阵与相关矩阵的转换
 
----
 
 ## Part 1：Core Concepts & Formulas 核心概念与公式
 
-### 1. Definitions 定义
+### 1. Definitions 
 
 For $n$ random variables $X_1, X_2, \dots, X_n$, the covariance matrix
 $\Sigma_X$ and correlation matrix $\Omega_X$ are both $n \times n$ matrices:
