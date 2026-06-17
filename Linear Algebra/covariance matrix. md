@@ -3,16 +3,92 @@
 
 ---
 
-### 问题设定 Problem Setup
+## Part 1：核心概念与公式 Core Concepts & Formulas
 
-设有 $n = 5$ 支股票：AAPL, FB, GOOG, MSFT, YHOO
+### 1. 样本均值 Sample Mean
 
-观测时间范围：1/10/2013 — 1/29/2013，共 $N = 13$ 个价格数据点，
-计算得 $N = 12$ 个日收益率。
+设随机变量 $X_k$ 在 $N$ 个时间点上有观测值，其样本均值为：
+
+$$
+\hat{\mu}_{X_k} = \frac{1}{N} \sum_{i=1}^N X_k(t_i), \quad k = 1:n
+$$
+
+### 2. 无偏样本协方差 Unbiased Sample Covariance
+
+随机变量 $X_j$ 和 $X_k$ 的无偏样本协方差：
+
+$$
+\widehat{\text{cov}}(X_j, X_k) =
+\frac{1}{N-1} \sum_{i=1}^N
+(X_j(t_i) - \hat{\mu}_{X_j})(X_k(t_i) - \hat{\mu}_{X_k})
+$$
+
+> 注意：分母为 $N-1$（无偏估计），而非 $N$。
+
+### 3. 样本协方差矩阵 Sample Covariance Matrix
+
+$n \times n$ 的样本协方差矩阵 $\hat{\Sigma}_X$，其第 $(j,k)$ 元素为：
+
+$$
+\hat{\Sigma}_X(j,k) = \widehat{\text{cov}}(X_j, X_k),
+\quad \forall \; 1 \leq j, k \leq n
+$$
+
+**性质 1：对称性 Symmetry**
+
+$$
+\hat{\Sigma}_X(j,k) = \hat{\Sigma}_X(k,j)
+$$
+
+**性质 2：对角线为方差 Diagonal = Variance**
+
+$$
+\hat{\Sigma}_X(k,k) = \widehat{\text{var}}(X_k) = \hat{\sigma}_k^2
+$$
+
+### 4. 去均值矩阵 Demeaned Matrix
+
+定义原始数据矩阵 $T_X$（$N \times n$）：
+
+$$
+T_X(i,k) = X_k(t_i), \quad 1 \leq i \leq N, \; 1 \leq k \leq n
+$$
+
+定义去均值矩阵 $\bar{T}_X$（$N \times n$）：
+
+$$
+\bar{T}_X(i,k) = X_k(t_i) - \hat{\mu}_{X_k}
+$$
+
+### 5. 核心公式 Key Formula
+
+$$
+\boxed{\hat{\Sigma}_X = \frac{1}{N-1} \bar{T}_X^T \bar{T}_X}
+$$
+
+**证明：** $\bar{T}_X^T \bar{T}_X$ 的第 $(j,k)$ 元素为：
+
+$$
+(\bar{T}_X^T \bar{T}_X)(j,k)
+= \sum_{i=1}^N \bar{T}_X(i,j) \cdot \bar{T}_X(i,k)
+$$
+
+$$
+= \sum_{i=1}^N
+(X_j(t_i) - \hat{\mu}_{X_j})(X_k(t_i) - \hat{\mu}_{X_k})
+$$
+
+除以 $N-1$ 正好等于 $\hat{\Sigma}_X(j,k)$，证毕。 $\square$
 
 ---
 
-### Step 1：原始价格数据 Raw Price Data
+## Part 2：例题与计算过程 Example & Solution
+
+### 原题 Problem
+
+设有 $n = 5$ 支股票：AAPL, FB, GOOG, MSFT, YHOO
+
+收盘价数据如下（1/10/2013 — 1/29/2013）：
 
 | Date | AAPL | FB | GOOG | MSFT | YHOO |
 |---|---|---|---|---|---|
@@ -30,9 +106,13 @@
 | 1/28/2013 | 449.83 | 32.47 | 750.73 | 27.91 | 20.31 |
 | 1/29/2013 | 458.27 | 30.79 | 753.68 | 28.01 | 19.70 |
 
+求：样本协方差矩阵 $\hat{\Sigma}_X$。
+
 ---
 
-### Step 2：日收益率计算 Daily Return
+### 计算过程 Solution
+
+**Step 1：计算日收益率，得到 $T_X$**
 
 日收益率公式：
 
@@ -40,19 +120,13 @@ $$
 r_t = \frac{S(t_2) - S(t_1)}{S(t_1)}
 $$
 
-**例：** GOOG 在 1/24/2013 的日收益率：
+例：GOOG 在 1/24/2013：
 
 $$
 T_X(9,3) = \frac{754.21 - 741.50}{741.50} = 0.0171
 $$
 
-**例：** GOOG 在 1/28/2013 的日收益率：
-
-$$
-T_X(11,3) = \frac{750.73 - 753.67}{753.67} = -0.0039
-$$
-
-计算所有股票的日收益率，得到数据矩阵 $T_X$（$12 \times 5$）：
+日收益率矩阵 $T_X$（$12 \times 5$）：
 
 $$
 T_X =
@@ -72,35 +146,21 @@ T_X =
 \end{pmatrix}
 $$
 
----
-
-### Step 3：样本均值 Sample Mean
+**Step 2：计算样本均值 $\hat{\mu}_{X_k}$**
 
 $$
-\hat{\mu}_{X_k} = \frac{1}{N} \sum_{i=1}^N X_k(t_i), \quad k = 1:n
+\hat{\mu}_{X_k} = \frac{1}{12} \sum_{i=1}^{12} T_X(i,k)
 $$
 
-5支股票的样本均值：
+| 股票 | AAPL | FB | GOOG | MSFT | YHOO |
+|---|---|---|---|---|---|
+| $\hat{\mu}$ | -0.0101 | -0.0011 | 0.0015 | 0.0048 | 0.0032 |
 
-| 股票 | 样本均值 $\hat{\mu}$ |
-|---|---|
-| AAPL | -0.0101 |
-| FB | -0.0011 |
-| GOOG | 0.0015 |
-| MSFT | 0.0048 |
-| YHOO | 0.0032 |
-
----
-
-### Step 4：去均值矩阵 Demeaned Matrix
-
-每列减去对应均值：
+**Step 3：去均值，得到 $\bar{T}_X$**
 
 $$
-\bar{T}_X(i,k) = X_k(t_i) - \hat{\mu}_{X_k}
+\bar{T}_X(i,k) = T_X(i,k) - \hat{\mu}_{X_k}
 $$
-
-得到去均值矩阵 $\bar{T}_X$（$12 \times 5$）：
 
 $$
 \bar{T}_X =
@@ -120,31 +180,14 @@ $$
 \end{pmatrix}
 $$
 
----
-
-### Step 5：协方差矩阵公式 Covariance Matrix Formula
-
-**核心公式：**
+**Step 4：代入核心公式**
 
 $$
-\boxed{\hat{\Sigma}_X = \frac{1}{N-1} \bar{T}_X^T \bar{T}_X}
+\hat{\Sigma}_X = \frac{1}{N-1} \bar{T}_X^T \bar{T}_X
+= \frac{1}{11} \bar{T}_X^T \bar{T}_X
 $$
 
-**为什么成立：** $\bar{T}_X^T \bar{T}_X$ 的第 $(j,k)$ 元素为：
-
-$$
-(\bar{T}_X^T \bar{T}_X)(j,k)
-= \sum_{i=1}^N \bar{T}_X(i,j) \cdot \bar{T}_X(i,k)
-= \sum_{i=1}^N (X_j(t_i) - \hat{\mu}_{X_j})(X_k(t_i) - \hat{\mu}_{X_k})
-$$
-
-除以 $N-1$ 正好等于无偏样本协方差。
-
----
-
-### Step 6：最终结果 Final Result
-
-代入 $N = 12$，得到 $5 \times 5$ 协方差矩阵：
+**Step 5：最终结果**
 
 $$
 \hat{\Sigma}_X =
@@ -157,10 +200,11 @@ $$
 \end{pmatrix}
 $$
 
-**解读：**
-- **对角线**：各股票的样本方差，AAPL 方差最大（0.0018），波动最大
-- **非对角线**：股票之间的协方差，接近 0 说明相关性较低
-- **对称性**：$\hat{\Sigma}_X(j,k) = \hat{\Sigma}_X(k,j)$，验证对称矩阵性质
+**结果解读：**
+
+- 对角线：各股票样本方差，AAPL 最大（0.0018），波动最剧烈
+- 非对角线：接近 0，说明五支股票之间相关性较低
+- 矩阵对称：验证 $\hat{\Sigma}_X(j,k) = \hat{\Sigma}_X(k,j)$
 
 ---
 
@@ -168,8 +212,10 @@ $$
 
 | 步骤 | 操作 | 公式 |
 |---|---|---|
-| 1 | 收集价格数据 | $S(t_i)$ |
-| 2 | 计算日收益率 | $r_t = \frac{S(t_2)-S(t_1)}{S(t_1)}$ |
-| 3 | 计算样本均值 | $\hat{\mu}_{X_k} = \frac{1}{N}\sum X_k(t_i)$ |
-| 4 | 去均值 | $\bar{T}_X(i,k) = X_k(t_i) - \hat{\mu}_{X_k}$ |
-| 5 | 矩阵乘法 | $\hat{\Sigma}_X = \frac{1}{N-1}\bar{T}_X^T\bar{T}_X$ |
+| 1 | 计算日收益率 | $r_t = \frac{S(t_2)-S(t_1)}{S(t_1)}$ |
+| 2 | 计算样本均值 | $\hat{\mu}_{X_k} = \frac{1}{N}\sum_{i=1}^N X_k(t_i)$ |
+| 3 | 去均值 | $\bar{T}_X(i,k) = X_k(t_i) - \hat{\mu}_{X_k}$ |
+| 4 | 矩阵乘法 | $\hat{\Sigma}_X = \frac{1}{N-1}\bar{T}_X^T\bar{T}_X$ |
+
+> 📌 金融含义：协方差矩阵描述证券之间的联动关系，
+> 是 Markowitz 组合优化和风险管理的核心输入。
