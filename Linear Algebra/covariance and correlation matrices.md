@@ -1,9 +1,10 @@
-Converting Between Covariance and Correlation Matrices
-协方差矩阵与相关矩阵的转换
+# Converting Between Covariance and Correlation Matrices
+# 协方差矩阵与相关矩阵的转换
 
 ---
 
-## Part 1：核心概念与公式 Core Concepts & Formulas
+## Part 1：Core Concepts & Formulas
+## Part 1：核心概念与公式
 
 ### 1. 协方差矩阵与相关矩阵的定义
 
@@ -89,7 +90,8 @@ $$
 
 ---
 
-## Part 2：例题与计算过程 Example & Solution
+## Part 2：Example & Solution
+## Part 2：例题与计算过程
 
 ### 例题 1：已知协方差矩阵，求相关矩阵
 
@@ -147,9 +149,8 @@ $$
 
 ---
 
-
-
 ### Practice Problem
+### 练习题
 
 设四个资产 A, B, C, D 的样本协方差矩阵为：
 
@@ -274,11 +275,9 @@ $$
 
 **Step 4：验证**
 
-对角线全为 1 ✓
-
-矩阵对称 ✓
-
-所有相关系数 $\in [-1, 1]$ ✓
+- 对角线全为 1 ✓
+- 矩阵对称 ✓
+- 所有相关系数 $\in [-1, 1]$ ✓
 
 **结果解读：**
 
