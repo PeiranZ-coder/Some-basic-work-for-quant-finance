@@ -147,44 +147,9 @@ $$
 
 ---
 
-### 例题
-$\sigma_1 = 2, \sigma_2 = 1, \sigma_3 = 0.9$，相关矩阵为：
 
-$$
-\Omega_X =
-\begin{pmatrix}
-1 & 0.15 & -0.2 \\
-0.15 & 1 & 0.1 \\
--0.2 & 0.1 & 1
-\end{pmatrix}
-$$
 
-求协方差矩阵 $\Sigma_X$。
-
-**计算过程：**
-
-**Step 1：构造 $D_{\sigma X}$**
-
-$$
-D_{\sigma X} =
-\begin{pmatrix} 2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0.9 \end{pmatrix}
-$$
-
-$$
-\Sigma_X = D_{\sigma X} \Omega_X D_{\sigma X} =
-\begin{pmatrix}
-4 & 0.3 & -0.36 \\
-0.3 & 1 & 0.09 \\
--0.36 & 0.09 & 0.81
-\end{pmatrix}
-\quad \square
-$$
-
----
-
-### 例题 3：综合练习 Practice Problem
-
-**原题：**
+### Practice Problem
 
 设四个资产 A, B, C, D 的样本协方差矩阵为：
 
