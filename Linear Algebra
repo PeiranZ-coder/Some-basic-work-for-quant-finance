@@ -1,0 +1,29 @@
+# Linear Algebra for Quantitative Finance
+
+Linear algebra plays a central role in many modern fields, including 
+artificial intelligence, machine learning, and deep learning.
+About 40 years ago, students were required to study abstract algebra 
+before approaching linear algebra — the subject was treated as a 
+formal, proof-heavy discipline. Today, it is taught much more 
+concretely, driven by computational needs and real-world applications.
+
+This note covers linear algebra from the ground up — starting from 
+vectors and matrices, through eigenvalues and decompositions (LU, QR, SVD), 
+numerical techniques, and culminating in PCA — with a focus on how 
+these tools are applied in quantitative finance.
+
+## Contents
+1. Vectors & Vector Spaces 向量与向量空间
+2. Matrices & Matrix Operations 矩阵与矩阵运算
+3. Eigenvalues & Eigenvectors 特征值与特征向量
+4. Matrix Decompositions 矩阵分解
+   - LU Decomposition
+   - QR Decomposition
+   - Singular Value Decomposition (SVD)
+5. Numerical Methods 数值方法
+6. Principal Component Analysis (PCA) 主成分分析
+7. Applications in Quant Finance 在量化金融中的应用
+   - Covariance Matrix & Risk 协方差矩阵与风险
+   - Factor Models 因子模型
+   - Portfolio Optimization 投资组合优化
+ 8 ....
